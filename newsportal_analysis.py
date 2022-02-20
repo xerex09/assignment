@@ -11,8 +11,8 @@ top_hits = Counter(c).most_common()[:20]
 top_words = dict(top_hits)
 val_val = top_words.values()
 key_val = top_words.keys()  
-for i in top_words:
-    print(i)
+for i,j in top_hits:
+    print(i,"->",j)
 ax = plt.subplot()
 font_prop = FontProperties(fname='C:\Windows\Fonts\mangal.ttf', size=18)
 for label in (ax.get_xticklabels() + ax.get_yticklabels()):
