@@ -1,4 +1,3 @@
-from matplotlib.font_manager import json_dump
 import scrapy
 import json
 
