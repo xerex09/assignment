@@ -15,9 +15,10 @@ class RatopatiSpider(scrapy.Spider):
     def parse(self, response):
         
         titles = response.css('.ot-content-block a::text').extract()
-        urls = response.css(".ot-content-block a::attr(href)").extract()
-        last_url = urls[-2]
+        urls = response.css(".ot-articles-material-blog-list a::attr(href)").extract()
+        last_url = urls[-1]
         last = last_url.split("/")
+        print(last_url)
         new_date = last[3]+'-'+last[4]+'-'+last[5]
         self.date = datetime.strptime(new_date, "%Y-%m-%d").date()
         old_date = datetime.strptime("2021-08-01", "%Y-%m-%d").date()
