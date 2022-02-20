@@ -34,7 +34,11 @@ class HoaSpider(scrapy.Spider):
         print("Internal Link: ", self.internal_link)
         print("External Link: ", self.external_link)
         print("Total Link: ", len(self.all_urls))
-        print("List of File can be found at urls.csv")
+        print("List of URLs can be found at urls.csv")
+        if self.internal_link > self.external_link:
+            print("The website is a authority")
+        else:
+            print("The website is a hub")
         
         
             
